@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -69,8 +70,13 @@ fun ShowAlertDialog() {
 
 
 @Composable
-fun FloatingActionButtonExample() {
-    FloatingActionButton(onClick = { /* Acción aquí */ }) {
+fun StyledFloatingActionButton() {
+    FloatingActionButton(
+        onClick = { /* Acción aquí */ },
+        modifier = Modifier
+            .padding(16.dp)
+            .size(60.dp),  // Tamaño más grande
+    ) {
         Icon(Icons.Default.Add, contentDescription = "Agregar")
     }
 }
